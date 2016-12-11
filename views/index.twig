@@ -1,0 +1,15 @@
+{% extends 'layout.twig' %} 
+    {% block body %}
+    {% for user in users %}
+    <div class="card">
+  <img src="/images/avatar.png" alt="Avatar" style="width:100%;opacity:0.85">
+  <div class="w3-container">
+  <h4><b>{{user.DisplayName}}</b></h4> 
+  <p>{{user.Location}}</p>  
+  {% set foo = user.AboutMe|split('\n') %} 
+  <p>{{foo[0]}}</p>    
+  </div>
+<br>
+</div>
+    {% endfor %}
+    {% endblock %}
